@@ -4,7 +4,8 @@ import {
   Montserrat_400Regular,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
-import Cesta from "./src/windows/Cesta";
+import Cesta from "./src/windows/Pdp";
+import pdp from "./src/Mocks/pdp";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,12 +14,12 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <View></View>;
+    return <View />;
   }
   return (
     <SafeAreaView>
       <StatusBar />
-      <Cesta />
+      <Cesta {...pdp} />
     </SafeAreaView>
   );
 }
